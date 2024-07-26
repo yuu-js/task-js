@@ -2,7 +2,7 @@ const express = require("express");
 const { user, post, edit, deleteUser } = require("../controller/userController");
 const { user_recipe, post_recipe, edit_recipe, delete_recipe } = require("../controller/recipeController");
 const {register, login} = require("../controller/authController")
-const { verifyToken } = require("../midleware/verifyToken");
+const { verifyToken } = require("../middleware/verifyToken");
 const router = express.Router();
 
 // user
