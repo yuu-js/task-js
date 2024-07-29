@@ -12,7 +12,7 @@ const getUser = async () => {
 
 const postUser  = async (data) => {
     try {
-        const response = await db.query("INSERT INTO login (name, email, phone, password, is_agreement) VALUES ($1, $2, $3, $4, $5) RETURNING *", [data.name, data.email, data.password, data.is_agreement]);
+        const response = await db.query("INSERT INTO login (name, email, phone, password, is_agreement) VALUES ($1, $2, $3, $4, $5) RETURNING *", [data.name, data.email, data.phone, data.password, data.is_agreement]);
         return response.rows
     } catch (error) {
         console.log(error)
@@ -22,7 +22,7 @@ const postUser  = async (data) => {
 
 const editUser = async (data, id) => {
     try {
-        const data = await db.query("UPDATE login SET name = $1 email= $2 phone = $3 password = $4 WHERE id = $5 RETURNING *", [data.name, data.email, data.email, data.password, id]);
+        const data = await db.query("UPDATE login SET name = $1 email= $2 phone = $3 password = $4 WHERE id = $5 RETURNING *", [data.name, data.email, data.phone, data.password, id]);
         return data.rows
     } catch (error) {
         console.log(error)

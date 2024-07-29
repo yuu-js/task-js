@@ -8,14 +8,14 @@ const router = express.Router();
 // user
 router.get('/', verifyToken, user)
 router.post("/route/post", post)
-router.put("/route/put/:ID", edit)
+router.put("/route/put/:id", edit)
 router.delete("/route/delete/:IDS", deleteUser)
 
 // add recipe
-router.get("/route/get_recipe", user_recipe)
-router.post("/route/post_recipe", post_recipe)
-router.put("/route/put_recipe/:ID", edit_recipe)
-router.delete("/route/delete_recipe/:IDS", delete_recipe)
+router.get("/route/getRecipe", user_recipe)
+router.post("/route/postRrecipe", post_recipe)
+router.put("/route/putRecipe/:ID", edit_recipe)
+router.delete("/route/deleteRecipe/:IDS", delete_recipe)
 
 // auth
 router.post("/auth/register", register)

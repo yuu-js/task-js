@@ -67,5 +67,5 @@ const login = async (req, res) => {
     res.send(error);
   }
 };
-
+    
 module.exports = { register, login };
